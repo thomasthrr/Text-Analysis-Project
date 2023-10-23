@@ -27,12 +27,13 @@ You should read this document in a somewhat non-linear/spiral fashion:
     if __name__ == "__main__":
         main()
     ```
-5. Write a brief document (Part 4) describing what you did.
-6. You are ~~encouraged~~ required to experiment with learning from ChatGPT (see more in Part 3).
+5. You are ~~encouraged~~ required to experiment with learning from ChatGPT (see more in Part 3).
+6. Write a brief document (Part 4) describing what you did.
 7. If you use any code that is not written by you (or that you learned from other places such as StackOverFlow/GitHub), please add Python comments (before the block of code) describing where you got/learned it from.
 8. Overall, I don't recommend using `numpy`, `pandas`, `sklearn` or `matplotlib` in this project, unless there is no other alternative way of processing and analyazing your data.
 
 ---
+
 ## Part 1: Harvesting text from the Internet
 
 The goal for Part 1 is to collect some text from the Internet that you can later use for text analysis.  Before diving deep into any particular method of text acquisition, it is recommended that you explore the different APIs and Python libraries available to extract text from the web. However, before spending too much time going down a particular path on the text acquisition component, you should look ahead to Part 2 to understand some of the things you can do with text you are harvesting. The key to a successful project is combining a relevant source of text with an appropriate technique for analysis (see Part 2).
@@ -64,7 +65,7 @@ Wikipedia is another valuable source of data that can be easily accessed and par
 
 ```shell
 > python -m pip install pymediawiki
-> python3 -m pip install pymediawiki # on MacOS Terminal
+> python3 -m pip install pymediawiki # on macOS Terminal
 ```
 
 Once you have installed the library, you can use it to search Wikipedia, get article summaries, and extract data like links and images from a page. To fetch a particular article and print out its sections, you can use the following Python code:
@@ -76,7 +77,6 @@ wikipedia = MediaWiki()
 babson = wikipedia.page("Babson College")
 print(babson.title)
 print(babson.content)
-
 ```
 
 This code will fetch the article with the given title and print its title and content. The output will look like this:
@@ -101,7 +101,7 @@ To install tweepy, run the following command in Command Prompt or Terminal:
 
 ```shell
 > python -m pip install tweepy
-> python3 -m pip install tweepy # on MacOS Terminal
+> python3 -m pip install tweepy # on macOS Terminal
 ```
 
 Here is a simple example for searching tweets containing `Babson College`:
@@ -133,7 +133,7 @@ To get reddit data, you need to install the [PRAW library](https://github.com/pr
 
 ```shell
 > python -m pip install praw
-> python3 -m pip install praw # on MacOS Terminal
+> python3 -m pip install praw # on macOS Terminal
 ```
 
 Here's an example from the [PRAW docs page](https://praw.readthedocs.io/en/stable/getting_started/quick_start.html):
@@ -157,8 +157,7 @@ You can use `newsapi-python` library to fetch news articles from [News API](http
 
 ```shell
 > python -m pip install newsapi-python
-> python3 -m pip install newsapi-python # on MacOS Terminal
-
+> python3 -m pip install newsapi-python # on macOS Terminal
 ```
 
 Here's an example from the [Python client library page](https://newsapi.org/docs/client-libraries/python) in News API Documentation:
@@ -196,7 +195,7 @@ You can also use `Newspaper3k` package to scrape and curate news articles. You n
 
 ```shell
 > python -m pip install newspaper3k
-> python3 -m pip install newspaper3k # on MacOS Terminal
+> python3 -m pip install newspaper3k # on macOS Terminal
 ```
 
 Here's an example from the [Newspaper3k docs page](https://newspaper.readthedocs.io/en/latest/):
@@ -218,10 +217,10 @@ To get the IMDB data, you need to install [`cinemagoer` library ](https://github
 
 ```shell
 > python -m pip install cinemagoer
-> python3 -m pip install cinemagoer # on MacOS Terminal
+> python3 -m pip install cinemagoer # on macOS Terminal
 ```
 
-Here's an example to print the first review of the movie 'The Dark Knight':
+Here's an example to print the first review of the movie "The Dark Knight":
 ```python
 from imdb import Cinemagoer
 
@@ -277,6 +276,7 @@ The result of running this code is that all of the texts in the list variable `c
 In addition to pickling, you can also save files using JSON format. To explore more about the built-in `json` library, feel free to ask ChatGPT or visit the official Python documentation website.
 
 ---
+
 ## Part 2: Analyzing Your Text
 
 ### Characterizing by Word Frequencies
@@ -299,7 +299,7 @@ To use NLTK, you need to install `nltk` by running the following command in in C
 
 ```shell
 > python -m pip install nltk
-> python3 -m pip install nltk # on MacOS Terminal
+> python3 -m pip install nltk # on macOS Terminal
 ```
 
 Here is an example of doing [sentiment analysis](https://en.wikipedia.org/wiki/Sentiment_analysis) using the `VADER` library in NLTK::
@@ -314,7 +314,7 @@ print(score)
 # {'neg': 0.0, 'neu': 0.614, 'pos': 0.386, 'compound': 0.7417}
 ```
 
-Notice: If you receive `Resource vader_lexicon not found` error when using `nltk`, you need to enter `python` in **Command Prompt** (or `python3` in **Terminal** on MacOS), then enter `import nltk` and `nltk.download('vader_lexicon')` in Python interactive shell.
+Notice: If you receive `Resource vader_lexicon not found` error when using `nltk`, you need to enter `python` in **Command Prompt** (or `python3` in **Terminal** on macOS), then enter `import nltk` and `nltk.download('vader_lexicon')` in Python interactive shell.
 
 If you perform some natural language processing, you may be able to say something interesting about the text you harvested from the web. For instance, if you listen to a particular Twitter hashtag on a political topic, can you gauge the mood of the country by looking at the sentiment of each tweet that comes by in the stream? Which of recent movies received most negative reviews? There are tons of cool options here!
 
@@ -381,7 +381,8 @@ You can use Markov analysis to learn a generative model of the text that you col
 You can explore further possibilities by even using the new [OpenAI API](https://openai.com/blog/openai-api).
 
 ---
-## Part 3: Getting Help from ChatGPT
+
+## Part 3: Learning with ChatGPT
 
 As you work through this project and experiment with different libraries in Python, you may encounter roadblocks or have questions about your code. That's when you can use ChatGPT to clear out any issues. You are also encouraged to learn other approaches, besides the techniques mentioned above, to process, analyze and visualize your own text dataset in Python from ChatGPT, who will serve as your assistant, providing helpful suggestions, aiding your learning process.
 
@@ -390,9 +391,10 @@ Here's how to make the most out of ChatGPT:
 - Start by taking detailed, comprehensive notes about where you're stuck or what you're trying to accomplish.
 - Ask ChatGPT by providing your question or issue. Make sure to prompt it thoroughly so it may better understand your problem.
 - Once ChatGPT responds, make sure to read their message carefully and consider their suggestions. Remember, responses from ChatGPT could be wrong, so it's essential to test and look for additional official documentation.
-- **Take screenshots** during your ChatGPT session to document your learning progress, which you will use in your write-up.
+- Include ChatGPT Shared Links in comments or in a separate document, and/or **take screenshots** during your ChatGPT session to document your learning progress, which you will use in your write-up. For example: you can add "I asked ChatGPT about the best practices of writing comments. See detailed conversation: [ChatGPT Shared Link](https://chat.openai.com/share/d4445b1e-f99a-413f-a588-e4447dc73cc)"
 
 ---
+
 ## Part 4: Project Writeup and Reflection
 
 Write a summary of your project and your reflections on it in [`README.md`](README.md), using [Markdown format](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax). There is no need to use fancy words or ChatGPT. The [`README.md`](README.md) file should consist of the following sections:
@@ -401,9 +403,9 @@ Write a summary of your project and your reflections on it in [`README.md`](READ
 
 What data source(s) did you use? What technique(s) did you use to process or analyze them? What did you hope to create or learn through this project?
 
-**2. Implementation** (~1-2 paragraphs + screenshots)
+**2. Implementation** (~1-2 paragraphs)
 
-Describe your implementation at a system architecture level. You should NOT walk through your code line by line, or explain every function (we can get that from your docstrings). Instead, talk about the major components, algorithms, data structures and how they fit together. You should also discuss at least one design decision where you had to choose between multiple alternatives, and explain why you made the choice. Use screenshots to describe how you used ChatGPT to help you or learn new things.
+Describe your implementation at a system architecture level. You should NOT walk through your code line by line, or explain every function (we can get that from your docstrings). Instead, talk about the major components, algorithms, data structures and how they fit together. You should also discuss at least one design decision where you had to choose between multiple alternatives, and explain why you made the choice. Use shared links and/or screenshots to describe how you used ChatGPT to help you or learn new things.
 
 **3. Results** (~2-3 paragraphs + figures/examples)
 
@@ -419,6 +421,7 @@ From a process point of view, what went well? What could you improve? Was your p
 From a learning perspective, mention what you learned through this project, how ChatGPT helped you, and how you'll use what you learned going forward. What do you wish you knew beforehand that would have helped you succeed?
 
 ---
+
 ## Submitting your Project
 
 1. Push all the code and updated `README.md` to the GitGub repository.
@@ -426,4 +429,4 @@ From a learning perspective, mention what you learned through this project, how 
 3. Submit your project's GitHub repository URL to Canvas.
 
 ---
-*updated: 3/08/2023*
+*updated: 10/23/2023*
