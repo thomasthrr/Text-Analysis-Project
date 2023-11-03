@@ -232,8 +232,13 @@ movie = ia.search_movie("The Dark Knight")[0]
 print(movie.movieID)
 # '0468569'
 
-movie_reviews = ia.get_movie_reviews('0468569')
-print(movie_reviews['data']['reviews'][0]['content'])
+# Get reviews
+movie = ia.get_movie('0468569', info=['reviews']) # Make sure to add the second argument
+reviews = movie.get('reviews', [])
+
+for review in reviews:
+    print(review['content'])
+    print()
 ``` 
 
 ### Data Source: More Data Sources
